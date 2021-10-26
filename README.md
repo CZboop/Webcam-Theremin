@@ -5,6 +5,6 @@ Python script (using OpenCV and MediaPipe to detect hand and landmarks) sends x 
 
 Current example is a relatively basic sine oscillator, should work for different synths and for variables other than freq/mul with minimal adjustments.
 
-Also detects the hand sign 🤘 or 🤟 (treated as the same) and will randomise the frequency, multiplier and amplitude while said hand sign is displayed.
+Also detects the hand sign 🤘 or 🤟 (raised index and pinky finger, other fingers lowered) and will randomise the frequency, multiplier and amplitude while said hand sign is displayed.
 
 Scripts just need to be run at the same time.
