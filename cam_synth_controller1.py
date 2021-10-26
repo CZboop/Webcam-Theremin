@@ -30,12 +30,13 @@ while True:
             # setting up OSC connection with default server supercollider listens on
             client = pyOSC3.OSCClient()
             client.connect( ( '127.0.0.1', 57120 ) )
-            # creating and sending a OSC message with x and y coords of index fingertip, to the specified synth in the supercollider script
+            # creating and sending a OSC message to the specified synth in the supercollider script
             msg = pyOSC3.OSCMessage()
             msg.setAddress("/theremin")
             # randomising the osc message in case of hand sign one
             if spidey:
                 msg.extend([random.uniform(0,0.3), random.uniform(0,0.3), random.uniform(2,5)])
+            # else sending x and y coords of index fingertip
             else:
                 msg.extend([hand_lms.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP].x, hand_lms.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP].y, 1])
             client.send(msg)
