@@ -9,11 +9,11 @@ OSCdef.new(
 
 	},'/theremin'
 );
-SynthDef( \sineFrom, { | amp = 0.01, freq = 333, trig = 1 |
+SynthDef( \sineFrom, { | amp = 1, freq = 333, trig = 5 |
     var env, sig;
-    env = EnvGen.kr( Env.asr( 0.001, 0.9, 0.001 ), trig, doneAction: 0 );
-    sig = LFTri.ar( [ freq, freq * 0.999 ], 0.0, amp ) * env;
-    Out.ar( [ 0 ], sig * 0.6 );
+    env = EnvGen.kr( Env.asr( 110.1, 150.9, 10.1 ), trig, doneAction: 0 );
+    sig = LFTri.ar( [ freq, freq * 0.299 ], 3.0, amp ) * env;
+    Out.ar( [ 0 ], sig * 2.6 );
 }).add;
 
 t = Synth( \sineFrom, {SinOsc.ar(freq: 300, phase: 1.0, mul: 0.5 )});
